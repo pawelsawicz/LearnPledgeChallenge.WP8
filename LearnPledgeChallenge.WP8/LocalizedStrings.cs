@@ -1,6 +1,6 @@
-﻿using learn_pledge_challenge.WP8.Resources;
+﻿using LearnPledgeChallenge.WP8.Resources;
 
-namespace learn_pledge_challenge.WP8
+namespace LearnPledgeChallenge.WP8
 {
     /// <summary>
     /// Provides access to string resources.

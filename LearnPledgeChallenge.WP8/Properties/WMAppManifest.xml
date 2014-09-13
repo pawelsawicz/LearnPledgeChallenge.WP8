@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{caab2462-3d96-48b8-8806-0af40e94bf3d}" Title="learn_pledge_challenge.WP8" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="learn_pledge_challenge.WP8 author" Description="Sample description" Publisher="learn_pledge_challenge.WP8" PublisherID="{c5d26865-76e4-4e80-9178-60aa4ddd3a21}">
+  <App xmlns="" ProductID="{caab2462-3d96-48b8-8806-0af40e94bf3d}" Title="LearnPledgeChallenge.WP8" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="LearnPledgeChallenge.WP8 author" Description="Sample description" Publisher="LearnPledgeChallenge.WP8" PublisherID="{c5d26865-76e4-4e80-9178-60aa4ddd3a21}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -11,15 +11,15 @@
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
     </Capabilities>
     <Tasks>
-      <DefaultTask Name="_default" NavigationPage="Views/MainView.xaml" />
+      <DefaultTask Name="_default" NavigationPage="Views/MainPage.xaml" />
     </Tasks>
     <Tokens>
-      <PrimaryToken TokenID="learn_pledge_challenge.WP8Token" TaskName="_default">
+      <PrimaryToken TokenID="LearnPledgeChallenge.WP8Token" TaskName="_default">
         <TemplateFlip>
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>learn_pledge_challenge.WP8</Title>
+          <Title>LearnPledgeChallenge.WP8</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

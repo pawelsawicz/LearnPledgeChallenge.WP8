@@ -8,7 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace learn_pledge_challenge.WP8.Views
+namespace LearnPledgeChallenge.WP8.Views
 {
     public partial class ChallengeView : PhoneApplicationPage
     {
