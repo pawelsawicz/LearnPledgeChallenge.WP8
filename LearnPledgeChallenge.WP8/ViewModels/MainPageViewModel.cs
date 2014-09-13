@@ -21,5 +21,10 @@ namespace LearnPledgeChallenge.WP8.ViewModels
         {
             _navigationService.Navigate(new Uri("/Views/PledgeView.xaml", UriKind.Relative));
         }
+
+        public void NavigateToChallenge()
+        {
+            _navigationService.Navigate(new Uri("/Views/ChallengeView.xaml", UriKind.Relative));
+        }
     }
 }
