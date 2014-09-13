@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bindableAppBar="clr-namespace:Caliburn.Micro.BindableAppBar;assembly=Caliburn.Micro.BindableAppBar"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -28,16 +29,24 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel>
-                <TextBlock Text="Name"></TextBlock>
-                <TextBox />
-                <TextBlock Text="Email"></TextBlock>
-                <TextBox />
-                <TextBlock Text="Pledge"></TextBlock>
-                <TextBox />
-                <Button Content="Pledge"/>
-            </StackPanel>
+            <ListBox>
+                <StackPanel Width="400">
+                    <TextBlock Text="Name" />
+                    <TextBox x:Name="Name" />
+                    <TextBlock Text="Email" />
+                    <TextBox x:Name="Email" />
+                    <TextBlock Text="Pledge" />
+                    <TextBox x:Name="Pledge" />
+                    <TextBlock Text="Ends" />
+                    <TextBox />
+                    <TextBlock Text="Forfeit"/>
+                    <TextBox x:Name="Forfeit" />
+                </StackPanel>
+            </ListBox>
         </Grid>
+        <bindableAppBar:BindableAppBar>
+            <bindableAppBar:BindableAppBarButton x:Name="TryPledge" />
+        </bindableAppBar:BindableAppBar>
     </Grid>
 
 </phone:PhoneApplicationPage>
