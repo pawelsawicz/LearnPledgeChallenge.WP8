@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using Caliburn.Micro;
+using Caliburn.Micro.BindableAppBar;
 using LearnPledgeChallenge.WP8.ViewModels;
 using LearnPledgeChallenge.WP8.Views;
 
@@ -24,7 +26,9 @@ namespace LearnPledgeChallenge.WP8
             _phoneContainer = new PhoneContainer();
             _phoneContainer.RegisterPhoneServices(RootFrame);
             _phoneContainer.PerRequest<MainPageViewModel>();
-            
+
+            ConventionManager.AddElementConvention<BindableAppBarMenuItem>(Control.IsEnabledProperty, "DataContext", "Click");
+            ConventionManager.AddElementConvention<BindableAppBarButton>(Control.IsEnabledProperty, "DataContext", "Click");
         }
 
         protected override object GetInstance(Type service, string key)

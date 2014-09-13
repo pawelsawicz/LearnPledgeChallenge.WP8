@@ -10,9 +10,16 @@ namespace LearnPledgeChallenge.WP8.ViewModels
 {
     public class MainPageViewModel : PropertyChangedBase
     {
-        public MainPageViewModel()
+        private readonly INavigationService _navigationService;
+
+        public MainPageViewModel(INavigationService navigationService)
         {
-            
+            _navigationService = navigationService;
+        }
+
+        public void NavigateToPledge()
+        {
+            _navigationService.Navigate(new Uri("/Views/PledgeView.xaml", UriKind.Relative));
         }
     }
 }
