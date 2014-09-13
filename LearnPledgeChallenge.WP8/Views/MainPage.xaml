@@ -40,6 +40,7 @@
         </Grid>
         <bindableAppBar:BindableAppBar>
             <bindableAppBar:BindableAppBarMenuItem x:Name="NavigateToPledge" Text="Pledge" />
+            <bindableAppBar:BindableAppBarMenuItem x:Name="NavigateToChallenge" Text="Challenge" />
         </bindableAppBar:BindableAppBar>
     </Grid>
 
