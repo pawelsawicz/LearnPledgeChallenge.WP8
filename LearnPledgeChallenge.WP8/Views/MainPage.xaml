@@ -28,12 +28,16 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="300" />
                         <RowDefinition Height="200" />
+                        <RowDefinition Height="200"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
                         <Image Source="/Assets/Images/landing-page-forest.jpg" VerticalAlignment="Top"/>
                     </Grid>
                     <Grid Grid.Row="1" Margin="12,0,12,0">
-                        <TextBlock Foreground="Gray" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin vulputate leo nec scelerisque. Phasellus male suada, nunc eu condimentum laoreet, lacus purus suscipit lacus, ut rhoncus sem lectuse eget dui." TextWrapping="Wrap"/>
+                        <TextBlock Foreground="Gray" Text="WePromise allows people to pledge climate-friendly behaviours in a fun, creative way, challenge their friends and compete in groups to scale their impact. This includes trying out new stuff at home, donating to the charities working at the front-line of climate change and making your voice heard." TextWrapping="Wrap"/>
+                    </Grid>
+                    <Grid Grid.Row="2" Margin="12,0,12,0">
+                        <TextBlock Foreground="Gray" Text="We believe that one of the reasons why we struggle to shift to climate-friendly behaviours is that there is often little emotional reward when getting started - if it's new and a bit difficult, and it doesn't feel right, you probably won't continue with it." TextWrapping="Wrap"/>
                     </Grid>
                 </Grid>
             </ListBox>
