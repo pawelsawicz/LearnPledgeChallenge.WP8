@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
@@ -19,11 +20,24 @@ namespace LearnPledgeChallenge.WP8.Data
             _deserializer = new JsonDeserializer();
         }
 
-        public async void Add(Pledge pledgeToAdd)
+        public async Task<bool> Add(Pledge pledgeToAdd)
         {
-            _restClient.BaseUrl = "http://wepromi.se/pledges";
-            var request = new RestRequest();
+            _restClient.BaseUrl = "http://wepromi.se/api/v1/pledges.json";
+            var request = new RestRequest(Method.POST);
+            request.AddParameter("pledge[name]", pledgeToAdd.Name);
+            request.AddParameter("pledge[ends_at]", pledgeToAdd.ExpirationDateTime.ToString("dd/MM/yyyy"));
+            request.AddParameter("pledge[forfeit]", pledgeToAdd.Forfeit);
+            request.AddParameter("pledge[pledge]", pledgeToAdd.PledgeText);
+            request.AddParameter("pledge[email]", pledgeToAdd.Email);
             var response = await _restClient.GetResponseAsync(request);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 

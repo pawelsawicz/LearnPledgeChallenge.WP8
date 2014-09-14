@@ -9,6 +9,7 @@ using Caliburn.Micro;
 using Caliburn.Micro.BindableAppBar;
 using LearnPledgeChallenge.WP8.ViewModels;
 using LearnPledgeChallenge.WP8.Views;
+using Microsoft.Phone.Controls;
 
 namespace LearnPledgeChallenge.WP8
 {
@@ -32,6 +33,7 @@ namespace LearnPledgeChallenge.WP8
 
             ConventionManager.AddElementConvention<BindableAppBarMenuItem>(Control.IsEnabledProperty, "DataContext", "Click");
             ConventionManager.AddElementConvention<BindableAppBarButton>(Control.IsEnabledProperty, "DataContext", "Click");
+            ConventionManager.AddElementConvention<DatePicker>(DateTimePickerBase.ValueProperty, "Value", "SelectedDate");
         }
 
         protected override object GetInstance(Type service, string key)
