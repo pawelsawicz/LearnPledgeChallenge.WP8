@@ -28,6 +28,7 @@ namespace LearnPledgeChallenge.WP8
             _phoneContainer.PerRequest<MainPageViewModel>();
             _phoneContainer.PerRequest<PledgeViewModel>();
             _phoneContainer.PerRequest<ChallengeViewModel>();
+            _phoneContainer.PerRequest<CharitiesViewModel>();
 
             ConventionManager.AddElementConvention<BindableAppBarMenuItem>(Control.IsEnabledProperty, "DataContext", "Click");
             ConventionManager.AddElementConvention<BindableAppBarButton>(Control.IsEnabledProperty, "DataContext", "Click");
