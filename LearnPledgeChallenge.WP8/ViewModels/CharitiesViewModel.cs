@@ -18,6 +18,11 @@ namespace LearnPledgeChallenge.WP8.ViewModels
             LoadCharities();
         }
 
+        public void TileTap()
+        {
+            MessageBox.Show("saddaads");
+        }
+
         private void LoadCharities()
         {
             
