@@ -25,7 +25,19 @@
         </Grid>
         <Grid x:Name="ContentPanel" Grid.Row="1" Background="Teal">
             <Grid Margin="12,0,12,0">
-                <toolkit:HubTile Title="Charity" Message="WWF.com" Source="/Assets/Fakes/f_avatar.jpg" Background="#78256d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12" micro:Message.Attach="[Event Tap] = [Action TileTap]" />
+                <ListBox ItemsSource="{Binding Charities}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <toolkit:WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <toolkit:HubTile Title="Charity" Message="WWF.com" Source="/Assets/Fakes/f_avatar.jpg" Background="#78256d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12" micro:Message.Attach="[Event Tap] = [Action TileTap]" />
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <toolkit:HubTile Title="Charity" Message="WWF.com" Source="/Assets/Fakes/f_avatar.jpg" Background="#78256d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12" micro:Message.Attach="[Event Tap] = [Action TileTap]" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </Grid>
         </Grid>
     </Grid>
