@@ -33,6 +33,7 @@ namespace LearnPledgeChallenge.WP8.ViewModels
             {
                 _email = value;
                 NotifyOfPropertyChange(() => Email);
+                NotifyOfPropertyChange(() => CanTryPledge);
             }
         }
 
@@ -61,12 +62,17 @@ namespace LearnPledgeChallenge.WP8.ViewModels
         private DateTime _datePicker;
         public DateTime DatePicker
         {
-        get { return _datePicker; }
+            get { return _datePicker; }
             set
             {
                 _datePicker = value;
                 NotifyOfPropertyChange(() => DatePicker);
             }
+        }
+
+        public bool CanTryPledge
+        {
+            get { return CheckIfEmailIsValid(); }
         }
 
         public PledgeViewModel(INavigationService navigationService)
@@ -89,10 +95,23 @@ namespace LearnPledgeChallenge.WP8.ViewModels
             if (result)
             {
                 MessageBox.Show("Your pledge has been created");
+                _navigationService.Navigate(new Uri("/Views/ChallengeView.xaml", UriKind.Relative));
             }
             else
             {
                 MessageBox.Show("Something went wrong, try again");
+            }
+        }
+
+        private bool CheckIfEmailIsValid()
+        {
+            if (Email != null && Email.Contains("@"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
