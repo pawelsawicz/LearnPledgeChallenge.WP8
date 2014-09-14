@@ -34,7 +34,7 @@
                     <toolkit:HubTile Title="Charity" Message="WWF.com" Source="/Assets/Fakes/f_avatar.jpg" Background="#78256d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12" micro:Message.Attach="[Event Tap] = [Action TileTap]" />
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <toolkit:HubTile Title="Charity" Message="WWF.com" Source="/Assets/Fakes/f_avatar.jpg" Background="#78256d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12" micro:Message.Attach="[Event Tap] = [Action TileTap]" />
+                            <toolkit:HubTile Title="Charity" Message="{Binding Name}" Source="{Binding LogoAbsoluteUrl}" Background="#78256d" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="12" micro:Message.Attach="[Event Tap] = [Action TileTap($this, $eventArgs)]"/>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

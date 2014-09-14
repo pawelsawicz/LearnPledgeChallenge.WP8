@@ -7,8 +7,10 @@ using System.Windows;
 using Windows.Foundation.Metadata;
 using Caliburn.Micro;
 using LearnPledgeChallenge.WP8.Data;
+using Microsoft.Phone.Controls;
 using Microsoft.Phone.SecureElement;
 using Microsoft.Phone.Tasks;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace LearnPledgeChallenge.WP8.ViewModels
 {
@@ -27,14 +29,23 @@ namespace LearnPledgeChallenge.WP8.ViewModels
             LoadCharities();
         }
 
-        public void TileTap()
+        public void TileTap(object sender, GestureEventArgs args)
         {
-            var linktoNavigate = CreateSimpleDonationIntegrationLink(2344);
-            var webBrowserTask = new WebBrowserTask
+            if (sender != null)
             {
-                Uri = new Uri(linktoNavigate, UriKind.Absolute)
-            };
-            webBrowserTask.Show();
+                var objectToMap = sender as Chairty;
+
+                var linktoNavigate = CreateSimpleDonationIntegrationLink(objectToMap.Id);
+                var webBrowserTask = new WebBrowserTask
+                {
+                    Uri = new Uri(linktoNavigate, UriKind.Absolute)
+                };
+                webBrowserTask.Show();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong please try again or contact with support");
+            }
         }
 
         private string CreateSimpleDonationIntegrationLink(int charityId)
